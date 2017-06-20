@@ -13,14 +13,21 @@
 
 <body>
 
+    <div ng-controller="ShoppingCart as vm">
+        <product-list data='vm.products'></product-list>
+    </div>
+
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/tether/dist/js/tether.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <script src="app/app.js">       
-    </script>
+    <script src="app/controllers/shopping-cart.controller.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/components/product-list/product-list.js"></script>
+    <script src="app/components/product-detail/product-detail.js"></script>
+
 </body>
 
 </html>

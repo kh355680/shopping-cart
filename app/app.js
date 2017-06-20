@@ -13,6 +13,7 @@
     angular
         .module('shopping-cart', [])
         .config(configuration)
-        .run(run);
+        .run(run)
+        .controller('ShoppingCart', shoppingCart);
 
 })(angular);
