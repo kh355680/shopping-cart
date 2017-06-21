@@ -13,7 +13,8 @@
 
 <body>
 
-    <div ng-controller="ShoppingCart as vm">
+    <div ng-controller="ShoppingCartController as vm">
+        Total: {{total}}
         <product-list data='vm.products'></product-list>
     </div>
 
@@ -23,11 +24,12 @@
     <script src="bower_components/tether/dist/js/tether.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <script src="app/controllers/shopping-cart.controller.js"></script>
+
     <script src="app/app.js"></script>
+    <script src="app/controllers/shopping-cart.controller.js"></script>
     <script src="app/components/product-list/product-list.js"></script>
     <script src="app/components/product-detail/product-detail.js"></script>
+    <script src="app/services/cart.js"></script>
 
 </body>
-
 </html>

@@ -1,16 +1,20 @@
-var shoppingCart = (function () {
+(function () {
     'use strict';
 
-    constructor.$inject = ['$http']
-    function constructor($http) {
+    constructor.$inject = ['$scope', '$http', 'Cart'];
+    function constructor($scope, $http, Cart) {
         var vm = this;
-        console.log('S');
         $http.get('mock/products.json').then(function (res) {
             vm.products = res.data;
-            console.log(vm.products);
         });
+
+        $scope.$on('event:show', function (event, data) {
+            $scope.total = data.some;
+        })
     }
 
-    return constructor;
-});
+    angular
+        .module('shopping-cart')
+        .controller('ShoppingCartController', constructor);
 
+})();

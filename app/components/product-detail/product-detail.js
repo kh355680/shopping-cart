@@ -1,8 +1,12 @@
 (function (angular) {
     'use strict';
 
-    function controllerFunction($scope) {
+    function controllerFunction($scope, Cart) {
         var vm = this;
+
+        vm.addToCart = function (item) {
+            Cart.addToCart(item);
+        }
     }
 
     function constructor() {
@@ -11,7 +15,8 @@
             restrict: 'E',
             replace: true,
             scope: {
-                info: '='
+                info: '=',
+                add: '&'
             },
             templateUrl: 'app/components/product-detail/product-detail.html',
             controller: controllerFunction,
